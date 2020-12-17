@@ -9,4 +9,5 @@ import Axios from "axios";
 export const ApiSocialNetwork = {
     autsMe() { return Api.get("/auth/me")},
     authLogin() { return Api.delete("/auth/login")},
+    authLoginPost(onClickk) { return Api.post("/auth/login",onClickk) },
 }

@@ -29,9 +29,16 @@ export const autsMeThunk = () => async (dispatsh) => {
     let response = await ApiSocialNetwork.autsMe()
     dispatsh(myId(response.data.data.id))
     dispatsh(loginResultCode(response.data.resultCode))
-    dispatsh(myLogin(response.data.data.id))
+    dispatsh(myLogin(response.data.data.login))
 }
 
 export const outputThunk = () => async (dispatsh) => {
     let response = await ApiSocialNetwork.authLogin()
+    dispatsh(loginResultCode(1))
+}
+
+export const authLoginPostThunc = (onClickk) => async(dispatsh) => {
+    let res = await ApiSocialNetwork.authLoginPost(onClickk)
+    dispatsh( loginResultCode(res.data.resultCode))
+    console.log(res.data.resultCode)
 }

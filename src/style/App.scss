@@ -1,6 +1,11 @@
 $black:rgba(0, 0, 0, 0.363);
 
-.App{
+.App {
     position: relative;
-    background-color: $black;
+    .App-content {
+       position: relative;
+       top: 75px;
+       background-color: $black;
+    }
+
 }
