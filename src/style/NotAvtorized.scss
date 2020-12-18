@@ -1,0 +1,16 @@
+$white: rgb(221, 213, 213);
+
+.notAutarized__registration{
+    border-radius: 10px;
+            font-size: 18px;
+            padding: 3px 10px;
+            color: rgb(58, 56, 56);
+            background-color:$white;
+            outline: none;
+            border-style: none;
+            &:hover{
+                background-color: rgb(212, 209, 209);
+                box-shadow:inset  1px 1px 10px 2px rgb(83, 83, 83) ;
+            }
+
+}
