@@ -4,7 +4,9 @@ import { Autarized } from "./Autarized"
 
 let mapStateToProps = (state) => {
     return {
-        myLogin:state.HeaderReducers.myLogin
+        myLogin:state.HeaderReducers.myLogin,
+        myProfile:state.ProfileReducer.myProfile,
+        NotAvatar:state.ProfileReducer.NotAvatar,
     }
 }
 

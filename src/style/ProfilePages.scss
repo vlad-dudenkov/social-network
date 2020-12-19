@@ -1,0 +1,65 @@
+$white: rgb(221, 213, 213);
+@mixin container {
+    background-color: rgba(0, 0, 0, 0.247);
+    border-radius: 5px;
+    margin: 5px;
+}
+@mixin buttonStyle {
+    border-radius: 10px;
+        font-size: 12px;
+        padding: 3px 10px;
+        color: rgb(58, 56, 56);
+        background-color: $white;
+        outline: none;
+        border-style: none;
+
+        &:hover {
+            background-color: rgb(221, 6, 6);
+            box-shadow: inset 1px 1px 5px 2px rgb(83, 83, 83);
+        }
+}
+
+.my-profile {
+    display: flex;
+    justify-content: center;
+
+    .my-profile__box1 {
+        display: flex;
+        flex-direction: column
+    }
+}
+
+.profile-photos {
+    @include container;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .profile-photos__img {
+        padding: 15px;
+        width: 200px;
+        height: 210px;
+        max-width: 100%;
+       
+    }
+}
+
+.photo-change {
+    position: relative;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 15px;
+    @include container;
+
+    .photo-change__input {
+        position: absolute;
+        width: 0;
+        
+    }
+    .photo-change__label {
+        @include buttonStyle
+    }
+    .photo-change__send {
+        @include buttonStyle
+    }
+}

@@ -1,30 +1,35 @@
-.autarized{
+.autarized {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     font-size: 15px;
     width: 120%;
-    .autarized__img-container{
-        width: 30px;
-        height: 30px;
-        border-radius: 50%;
-        background-color: rgba(0, 0, 255, 0.356);
-    }
-    .autarized__user-name{
+
+        .autarized__img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+        }
+
+    .autarized__user-name {
         font-size: 12px;
     }
-    .autarized__output{
+
+    .autarized__output {
         cursor: pointer;
-        &:hover{
+
+        &:hover {
             color: wheat;
         }
     }
 }
-@media(max-width:320px){
-    .autarized__img-container{
+
+@media(max-width:320px) {
+    .autarized__img-container {
         display: none;
     }
-    .autarized__user-name{
+
+    .autarized__user-name {
         display: none;
     }
 }

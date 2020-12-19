@@ -11,5 +11,8 @@ export const ApiSocialNetwork = {
     authLogin() { return Api.delete("/auth/login")},
     authLoginPost(onClickk) { return Api.post("/auth/login",onClickk) },
     myProfile(myId){ return Api.get(`/profile/${myId}`)},
-    
+    newProfilePhotos(file) { 
+        const formDat= new FormData();
+        formDat.append("image", file);
+        return Api.put(`/profile/photo`,formDat, {headers:{"Content-Type":"multipart/form-data"}})}
 }
