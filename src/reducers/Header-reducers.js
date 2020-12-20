@@ -33,7 +33,7 @@ export const autsMeThunk = () => async (dispatsh) => {
 }
 
 export const outputThunk = () => async (dispatsh) => {
-    let response = await ApiSocialNetwork.authLogin()
+    await ApiSocialNetwork.authLogin()
     dispatsh(loginResultCode(1))
 }
 

@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import { compose } from "redux";
-import { MyProfileThunk, newMyPhotosThunk, } from "../../reducers/ProfileReducer";
+import { MyProfileThunk, newMyPhotosThunk, getStatusThunk,putStatusThunk } from "../../reducers/ProfileReducer";
 import { RedirectLogin } from "../hoc/RedirectLogin";
 import { ProfilePages } from "./ProfilePages";
 
@@ -9,10 +9,12 @@ let mapStateToProps = (state) => {
         loginResultCode:state.HeaderReducers.loginResultCode,
         myId:state.HeaderReducers.myId,
         myProfile:state.ProfileReducer.myProfile,
-        NotAvatar:state.ProfileReducer.NotAvatar
+        NotAvatar:state.ProfileReducer.NotAvatar,
+        myStatus:state.ProfileReducer.myStatus,
+        myResult:state.ProfileReducer.myResult,
     }
 }
 
 export const ProfilePagesContainer = compose( connect(mapStateToProps,
-    {MyProfileThunk,newMyPhotosThunk}
+    {MyProfileThunk,newMyPhotosThunk, getStatusThunk,putStatusThunk}
     ), RedirectLogin)(ProfilePages) 

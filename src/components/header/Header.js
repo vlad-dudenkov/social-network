@@ -9,7 +9,7 @@ export const Header = (props) => {
         <div className="header-container">
             <div className="header-container__logo-container">
                 <div className="header-container__logo-img">
-                    <img src={props.imgLogottip}/>
+                    <img src={props.imgLogottip} alt="img"/>
                 </div>
                 <div className="header-container__logo-text">
                     social network

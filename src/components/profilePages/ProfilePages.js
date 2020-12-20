@@ -2,10 +2,14 @@ import React, { useEffect, useState } from "react"
 import "./../../style/ProfilePages.scss"
 
 export const ProfilePages = (props) => {
-    useEffect(() => { props.MyProfileThunk(props.myId) }, [props.myId])
+    useEffect(() => {
+        props.MyProfileThunk(props.myId)
+        props.getStatusThunk(props.myId)
+    }, [props.myResult, props.myStatus])
     let [file, setfile] = useState()
-    let onclickButton = () => { 
-        console.log(file)
+    let [input, setInput] = useState(true)
+    let [valueInputStatus,SetValueInputStatus ] = useState(props.myStatus)
+    let onclickButton = () => {
         props.newMyPhotosThunk(file)
     }
     return (
@@ -19,6 +23,7 @@ export const ProfilePages = (props) => {
                             <img
                                 className="profile-photos__img"
                                 src={m.photos.large ? m.photos.large : props.NotAvatar}
+                                alt="img"
                             />
                         </div>
                         <div className="photo-change">
@@ -33,13 +38,30 @@ export const ProfilePages = (props) => {
                                 {file ? ":1" : ""}
                             </label>
 
-                            <button className="photo-change__send" onClick={()=>onclickButton()} >
+                            <button className="photo-change__send" onClick={() => onclickButton()} >
                                 отправить
                             </button>
                         </div>
                     </div>
                     <div className="my-profile__box2">
-                        <div className="profile-myNames">{m.fullName}</div>
+                        <div className="container">
+                            <div className="profile-myNames">{m.fullName}</div>
+                            <div className="profile-myStatus">
+                                {input ? <div className="profile-myStatus__status"
+                                        onClick={() => setInput(false)}
+                                    >
+                                        {props.myStatus}
+                                    </div>
+                                :
+                                <input 
+                                autoFocus={true}
+                                onBlur={() => {setInput(true); props.putStatusThunk(valueInputStatus)}}
+                                value={valueInputStatus}
+                                onChange={(e)=>SetValueInputStatus(e.target.value)}
+                                />
+            }
+                            </div>
+                        </div>
                     </div>
                 </div>
             ))}

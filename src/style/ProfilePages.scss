@@ -3,6 +3,7 @@ $white: rgb(221, 213, 213);
     background-color: rgba(0, 0, 0, 0.247);
     border-radius: 5px;
     margin: 5px;
+   
 }
 @mixin buttonStyle {
     border-radius: 10px;
@@ -18,10 +19,15 @@ $white: rgb(221, 213, 213);
             box-shadow: inset 1px 1px 5px 2px rgb(83, 83, 83);
         }
 }
+.profile-pages{
+    display: flex;
+    justify-content: center;
+}
 
 .my-profile {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
+    width: 70%;
 
     .my-profile__box1 {
         display: flex;
@@ -61,5 +67,21 @@ $white: rgb(221, 213, 213);
     }
     .photo-change__send {
         @include buttonStyle
+    }
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    
+    .profile-myNames{
+        font-size: 20px;
+        padding:0px 15px;
+    }
+    .profile-myStatus{
+        padding:0px 15px;
+        .profile-myStatus__status{
+            font-size: 15px;
+        }
     }
 }
